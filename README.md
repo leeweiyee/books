@@ -1,1 +1,3 @@
 # Books
+
+In this project, I obtained data on books on Goodreads, a social cataloging website containing a database of books, from [Kaggle](https://www.kaggle.com/jealousleopard/goodreadsbooks) in csv format and initialised the data in a Docker container running Postgres using Docker Compose. Using SQLAlchemy with the psycopg2 driver, I queried the Postgres data within a Jupyter notebook. Pandas, Matplotlib and Seaborn libraries were used to create data visualisations. 
