@@ -1,3 +1,3 @@
 COPY books
-FROM '/data/books.csv'
+FROM '/data/books_copy.csv'
 DELIMITER ',' CSV HEADER;

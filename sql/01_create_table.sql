@@ -9,6 +9,6 @@ CREATE TABLE books (
     num_pages TEXT,
     ratings_count TEXT,
     text_reviews_count TEXT,
-    publication_date TEXT,
+    publication_date TIMESTAMP,
     publisher TEXT
 );

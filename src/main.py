@@ -1,5 +1,20 @@
-# This file is no longer needed because we used the postgres image's /docker-entrypoint-initdb.d to initialise the
-# database with our csv data
+import csv
+from datetime import datetime, timedelta
+
+if __name__ == "__main__":
+    with open('data/books.csv', 'r') as infile, open('data/books_copy.csv', 'w') as outfile:
+        writer = csv.writer(outfile)
+        outfile.write(next(infile))
+        for row in csv.reader(infile):
+            dt = datetime.strptime(row[10], "%m/%d/%y")
+            if dt > datetime.now():
+                dt = dt.replace(year=dt.year-100)
+            row[10] = dt.date()
+            writer.writerow(row)
+
+
+# This section of the file is no longer needed because we used the postgres image's /docker-entrypoint-initdb.d to
+# initialise the database with our csv data
 #
 # import csv
 # from sqlalchemy import create_engine, text, Table, MetaData, Column, String, Integer, Float
